@@ -1,0 +1,75 @@
+/*
+Megan McElenney
+28 August 2017
+Lab 1
+Tells the user what direction the angle of the compass is pointing.
+Test Data: 
+Input       Output      Passed?
+0           North       Yes
+256.8       West        Yes
+202.5       South       Yes
+-1          Invalid     Yes
+456         Invalid     Yes
+ */
+package lab1mmcelenney;
+import javax.swing.JOptionPane;
+public class Lab1MMcelenney 
+{
+    public static void main(String[] args) 
+    {
+        String input = JOptionPane.showInputDialog("How many degrees are you "
+                + "away from the North?");
+        double degree = Double.parseDouble(input);
+        
+        if (degree <= 0 || degree >= 360)
+        {
+            System.out.print("Input a value between 0 and 360");
+        }
+        else
+
+        if (degree <= 22.5 && degree >=0 || degree >= 337.5 && degree <= 360)
+        {
+            System.out.print("You are heading North");
+        }
+
+        if (degree < 67.5 && degree > 22.5)
+        {
+            System.out.print("You are heading North East");
+        }
+
+        if (degree <= 112.5 && degree >= 67.5)
+        {
+            System.out.print("You are heading East");
+        }
+
+        if (degree < 157.5 && degree > 112.5)
+        {
+            System.out.print("You are heading South East");
+        }
+
+        if (degree <= 202.5 && degree >= 157.5)
+        {
+            System.out.print("You are heading South");
+        }
+
+        if (degree < 247.5 && degree > 202.5)
+        {
+            System.out.print("You are heading South West");
+        }
+
+        if (degree <= 292.5 && degree >= 247.5)
+        {
+            System.out.print("You are heading West");
+        }
+
+        if (degree < 337.5 && degree > 292.5)
+        {
+            System.out.print("You are heading North West");
+        }
+        else
+        {
+            System.out.print("You are heading nowhere because that's invalid.");
+        }
+    }
+    
+}
